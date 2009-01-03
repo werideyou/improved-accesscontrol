@@ -33,7 +33,7 @@ $egAdminCanReadAll = false;
    false (default): Let all transclusions through, which will bypass access 
                     controls on them
 */
-$egBlockRestrictedTransclusions = true;
+$egBlockRestrictedTransclusions = false;
 
 /* egReadOnlyActionAccess
    Configure which actions can be used by a user with read-only access
@@ -48,19 +48,19 @@ $egReadOnlyActionAccess = array('read', 'view', 'render', 'watch', 'unwatch',
      'read' means read-only access is fine
      'none' (default) means allow saves that would lock user out of the page
 */
-$egPreventSaveDenyingAccess = 'edit';
+$egPreventSaveDenyingAccess = 'none';
 
 /* egAccessControlDebug
    Log debugging information
    true: Log debug information -- $egAccessControlDebugFile is required
    false (default): No logging
 */
-$egAccessControlDebug = true;
+$egAccessControlDebug = false;
 
 /* egAccessControlDebugFile
    File to log debugging information to
    Must be set if $egAccessControlDebug=true, no default
 */
-$egAccessControlDebugFile = '/home/jeisen/wiki.log';
+$egAccessControlDebugFile = '/var/log/wiki.log';
 
 ?>
