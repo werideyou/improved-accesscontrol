@@ -152,6 +152,24 @@ function efIACMakeTitle( &$title, $namespace=0 ){
   return $new_title;
 }
 
+/** Function: efIACReturnResult( $status, &$result )
+ * Written to get around https://bugzilla.wikimedia.org/show_bug.cgi?id=17116
+ * Return the value provided, setting $result if configured to do so
+ * $status --> The status to return
+ * $result --> Shared result object to set depending on configuration
+ * Returns: Same as $status
+ */ 
+function efIACReturnResult( $return_status, &$result ){
+  global $egAccessControlOverrideWiki;
+  efIACDebugLog ("(efIACReturnResult) Return status is ".$return_status.".");
+  efIACDebugLog ("Override is ".$egAccessControlOverrideWiki.".");
+  
+  if( !($return_status) || ($egAccessControlOverrideWiki) ){
+    $result = $return_status;
+  }
+  return $return_status;
+}
+
 /** Function: efIACUserCanAccess( &$user, &$accessGroups, $action )
  * Determine whether the user can perform a given action, given the 
  *	article's access groups

@@ -63,4 +63,11 @@ $egAccessControlDebug = false;
 */
 $egAccessControlDebugFile = '/var/log/wiki.log';
 
+/* egAccessControlOverrideWiki
+   Override standard wiki protection (from $wgGroupPermissions)	
+   true: If this extension says user is allowed, $wgGroupPermissions are ignored
+   false (default): User may still be denied access through $wgGroupPermissions
+*/
+$egAccessControlOverrideWiki = false;
+
 ?>

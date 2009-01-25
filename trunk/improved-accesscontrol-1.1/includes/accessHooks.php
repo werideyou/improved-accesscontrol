@@ -144,15 +144,13 @@ function efIACAccessControlUserCanHook( $title, $wgUser, $action,
   // Pass through if user is a sysop and the option is set
   if( $egAdminCanReadAll && $userIsSysop ){
     efIACDebugLog( "(efIACAccessControlUserCanHook) sysop access");
-    $result = true;
-    return $result;
+    return efIACReturnResult( true, $result );
   }
   
   // Fail if article requires sysop and user is not one
   if( efIACArticleRequiresAdmin( $title ) && !( $userIsSysop ) ){
     efIACDebugLog( "(efIACAccessControlUserCanHook) sysop required");
-    $result = false;
-    return $result;
+    return efIACReturnResult( false, $result );
   }
   
   // Get the content of the article
@@ -162,12 +160,13 @@ function efIACAccessControlUserCanHook( $title, $wgUser, $action,
   $accessList = efIACGetAccessList( $content );
   
   // Get the result of whether the user can access		
-  $result = efIACUserCanAccess( $wgUser, $accessList, $action );
+  $localResult = efIACUserCanAccess( $wgUser, $accessList, $action );
   
   unset($accessList);
   unset($content);
   unset($title);
-  return $result;
+  
+  return efIACReturnResult( $localResult, $result );
 }
 
 ?>
