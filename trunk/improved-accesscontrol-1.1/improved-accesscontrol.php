@@ -1,7 +1,7 @@
 <?php
 
 /******************************************************************************
- * improved-accesscontrol version 1.1, tested on MediaWiki 1.13.1 and 1.13.2  *
+ * improved-accesscontrol version 1.11, tested on MediaWiki 1.13.1 and 1.13.2 *
  * MediaWiki extension that enables group access restriction on a             *
  *  page-by-page basis along with several other features                      *
  *                                                                            *
