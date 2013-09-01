@@ -6,7 +6,7 @@
 $wgExtensionCredits['parserhook'][] =
   array(
       'name' => 'Improved Access Control',
-      'version' => 1.0,
+      'version' => 2.0,
       'author' => 'Jonathan Eisenstein',
       'url' => 'http://www.mediawiki.org/wiki/User:JEisen',
       'description' => 'Enables group-based access control on a '.
